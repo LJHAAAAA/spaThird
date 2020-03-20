@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用Echarts绘制折线图</title>
+    <script src="https://lib.baomitu.com/echarts/4.6.0/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+</body>
+<script>
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var xData = [2000,2005,2010,2015,2020];
+    var yData = [0,2,4,6,8,10];
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'JavaScript语言排名变化'
+        },
+        tooltip: {},
+        xAxis: {
+            data: xData
+        },
+        yAxis:{
+            data:yData
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'line',
+            data: [6,9,8,8,7]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</html>
